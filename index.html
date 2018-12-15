@@ -124,10 +124,10 @@
                                     <li>Hoe kan ik je helpen om jezelf en andere te helpen?</li>
                                 </ul>
                             </p>
-                            <form class="form-horizontal bv-form" action="php/contactForm.php" method="post" role="form" id="contactForm" novalidate="novalidate">
+                            <form class="form-horizontal bv-form" method="post" role="form" id="contactForm" novalidate="novalidate">
 							<div class="form-group has-feedback">
 								<div class="col-sm-12">
-									<input style="margin-bottom: 15px;width: 100%;" type="text" name="name" class="form-control" placeholder="vul hier je naam in" data-bv-field="name"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none; top: 0px;"></i>	
+									<input style="margin-bottom: 15px;width: 100%;" type="text" name="name" id="name" class="form-control" placeholder="vul hier je naam in"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none; top: 0px;"></i>	
     								<!--
     								<small data-bv-validator="notEmpty" data-bv-validator-for="name" class="help-block" style="display: none;">Vul hier je naam in</small>
     								<small data-bv-validator="stringLength" data-bv-validator-for="name" class="help-block" style="display: none;">Naam moet minstens 2 tekens bevatten</small>
@@ -135,7 +135,7 @@
 								</div>
 								
 								<div class="col-sm-12">
-									<input style="margin-bottom: 15px;width: 100%;" type="text" name="contactEmail" class="form-control" placeholder="geef hier je emailadres" data-bv-field="contactEmail"><i class="form-control-feedback" data-bv-icon-for="contactEmail" style="display: none; top: 0px;"></i>
+									<input style="margin-bottom: 15px;width: 100%;" type="text" name="contactEmail" id="contactEmail" class="form-control" placeholder="geef hier je emailadres"><i class="form-control-feedback" data-bv-icon-for="contactEmail" style="display: none; top: 0px;"></i>
 								    <!--
 								    <small data-bv-validator="notEmpty" data-bv-validator-for="contactEmail" class="help-block" style="display: none;">Dit is geen geldig emailadres</small>
 								    <small data-bv-validator="emailAddress" data-bv-validator-for="contactEmail" class="help-block" style="display: none;">Vul hier je emailadres in</small>-->
@@ -148,7 +148,8 @@
 									</button>
 								</div>
 							</div>
-						<input type="hidden" value=""></form>
+                        <input type="hidden" value="">
+                        </form>
                             <!--<h1>Bioresonantie Nijmegen, Groesbeek, Kranenburg</h1>
                             
                             <p>
@@ -1338,6 +1339,7 @@
         <!--################ JAVASCRIPTS ################-->
 
         <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery.fitvids.js"></script>
@@ -1352,7 +1354,8 @@
 		<script src="js/ladda.min.js"></script>
 		<script src="js/retina.min.js"></script>
 		<script src="js/wow.min.js"></script>
-		<script src="js/init.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/firebase.js"></script>
 
         
 

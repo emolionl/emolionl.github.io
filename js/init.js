@@ -11,12 +11,13 @@ $(function () {
 
 	$(".youtube").colorbox({iframe:true, innerWidth:"70%", innerHeight:"70%"});
 
+	
 	/* ---------------------------------------------------------
 	 * Form validation
 	 */
 
 	/* Signup form */
-
+/*
 	$('#signupForm').bootstrapValidator({
 		message: 'This value is not valid',
 		feedbackIcons: {
@@ -54,7 +55,7 @@ $(function () {
 	});
 
 	/* Contact form */
-
+/*
 	$('#contactForm').bootstrapValidator({
 		fields: {
 			name: {
@@ -95,7 +96,27 @@ $(function () {
 			
 			l.start();
 			btnText.html("Verzenden...");
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyC3j_shehFiJbFVo9eg4AfUEoesr3uEPBE",
+				authDomain: "emolio-nl.firebaseapp.com",
+				databaseURL: "https://emolio-nl.firebaseio.com",
+				projectId: "emolio-nl",
+				storageBucket: "emolio-nl.appspot.com",
+				messagingSenderId: "619699037685"
+			};
+			firebase.initializeApp(config);
 			
+			var messagesRef = firebase.database().ref('signups');
+			messagesRef.set({
+				name: 'name',
+				email: 'email'
+			});
+			var data = $("#contactForm :input").serializeArray();
+			console.log(data);
+			
+
+
 			$.post(form.attr('action'), form.serialize(), function(result) {
 				console.log(result.sent);
 				if(result.sent == '1'){
@@ -130,8 +151,10 @@ $(function () {
 				l.stop(); 
 				validator.disableSubmitButtons(true);
 			});
+	
+		
 		},
 	});
 	
-	
+	*/
 });
