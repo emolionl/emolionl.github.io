@@ -9,7 +9,7 @@ $(window).load(function () {
 $(function () {
 	"use strict";
 
-	$(".youtube").colorbox({iframe:true, innerWidth:"80%", innerHeight:"80%"});
+	$(".youtube").colorbox({iframe:true, innerWidth:"70%", innerHeight:"70%"});
 
 	/* ---------------------------------------------------------
 	 * Form validation
