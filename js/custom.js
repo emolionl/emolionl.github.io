@@ -88,11 +88,11 @@ $(window).scroll(function(){
             
 }); 
 
-jQuery(document).ready(function($){
+/*jQuery(document).ready(function($){
     $.getJSON('http://api.twitter.com/1/statuses/user_timeline/wrapbootstrap.json?count=1&amp;callback=?', function(tweets){
         $("#twitter").html(tz_format_twitter(tweets));
     });
-});
+});*/
 
 
     /*----------------------------------------------------*/
