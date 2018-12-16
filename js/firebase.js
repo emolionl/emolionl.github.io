@@ -61,6 +61,29 @@ function saveToFirebase(name, email){
     });
  }
  $(function() { //shorthand document.ready function
+
+    $("#vraagOpnieuwWachtwoord").click(function() {
+      var forgotPassEmail = $("#forgotPassEmail").val();
+      firebase.auth().sendPasswordResetEmail(forgotPassEmail)
+      .then(function() {
+        // Password reset email sent.
+        console.log("sendPasswordResetEmail");
+        console.log(error);
+        console.log(error.code);
+
+        $("#wachtwoordVergeten").hide();
+        $("#wachtwoordVerzonden").show();
+        $("#wachtwoordError").hide();
+        
+      })
+      .catch(function(error) {
+        console.log(error);
+        $("#wachtwoordVergeten").hide();
+        $("#wachtwoordVerzonden").show();
+        $("#wachtwoordError").hide();
+        // Error occurred. Inspect error.code.
+      });
+    });
     $('#contactForm').on('submit', function(e) { //use on if jQuery 1.7+
         e.preventDefault();  //prevent form from submitting
         var data = $("#contactForm :input").serializeArray();
@@ -87,6 +110,7 @@ function saveToFirebase(name, email){
               if(loginErrorCode == "auth/wrong-password"){
                 $("#wachtwoordError").show();
                 $("#wachtwoordVergeten").show();
+                $("#wachtwoordTekortError").hide();
               } else {
                 var newmessagesRef = messagesRef.push();
                 newmessagesRef.set({
