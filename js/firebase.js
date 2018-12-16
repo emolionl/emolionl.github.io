@@ -112,11 +112,7 @@ function saveToFirebase(name, email){
                 $("#wachtwoordVergeten").show();
                 $("#wachtwoordTekortError").hide();
               } else {
-                var newmessagesRef = messagesRef.push();
-                newmessagesRef.set({
-                    name: data[0].value,
-                    email: data[1].value
-                });
+                
                 $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
                   console.log("before colorbox");
                   $.colorbox({
