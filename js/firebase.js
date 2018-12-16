@@ -94,6 +94,11 @@ function saveToFirebase(name, email){
                 $("#wachtwoordError").show();
                 $("#wachtwoordVergeten").show();
               } else {
+                var newmessagesRef = messagesRef.push();
+                newmessagesRef.set({
+                    name: data[0].value,
+                    email: data[1].value
+                });
                 $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
                   console.log("before colorbox");
                   $.colorbox({
@@ -107,6 +112,11 @@ function saveToFirebase(name, email){
               // ...
             });
           } else {
+            var newmessagesRef = messagesRef.push();
+            newmessagesRef.set({
+                name: data[0].value,
+                email: data[1].value
+            });
             $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
                   console.log("before colorbox");
                   $.colorbox({
