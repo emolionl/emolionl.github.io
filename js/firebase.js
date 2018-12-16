@@ -75,6 +75,8 @@ function saveToFirebase(name, email){
           console.log(errorMessage);
           console.log(errorCode);
 
+          
+
           if(errorCode == "auth/email-already-in-use"){
             firebase.auth().signInWithEmailAndPassword(data[1].value, data[2].value).catch(function(error) {
               // Handle Errors here.
@@ -103,6 +105,8 @@ function saveToFirebase(name, email){
               }
               // ...
             });
+          } else if (errorCode == "auth/weak-password") {
+            $("#wachtwoordTekortError").show();
           } else {
             var newmessagesRef = messagesRef.push();
             newmessagesRef.set({
