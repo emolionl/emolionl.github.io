@@ -8,6 +8,56 @@ var config = {
     messagingSenderId: "619699037685"
 };
 firebase.initializeApp(config);
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    console.log('logged in');
+    $(function() { //shorthand document.ready function
+      $('#contactForm').hide();
+      $('#loginDropdown').show();
+      $('#downloadRapportButton').show();
+    });
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+    console.log('logged out');
+    $(function() { //shorthand document.ready function
+      $('#contactForm').show();
+      $('#downloadRapportButton').hide();
+      
+    });
+  }
+});
+
+$(function(){
+  $( "#logout" ).click(function() {
+    firebase.auth().signOut().then(function() {
+      console.log('Signed Out');
+      location.reload();
+    }, function(error) {
+      console.error('Sign Out Error', error);
+    });
+  });
+  
+});
+
+function login(){
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+}
  
 var messagesRef = firebase.database().ref('signups');
 
@@ -24,6 +74,52 @@ function saveToFirebase(name, email){
         var data = $("#contactForm :input").serializeArray();
         console.log(data[0].value);
         console.log(data[1].value);
+        console.log(data[2].value);
+        firebase.auth().createUserWithEmailAndPassword(data[1].value, data[2].value).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+          console.log(errorMessage);
+          console.log(errorCode);
+
+          if(errorCode == "auth/email-already-in-use"){
+            firebase.auth().signInWithEmailAndPassword(data[1].value, data[2].value).catch(function(error) {
+              // Handle Errors here.
+              var loginErrorCode = error.code;
+              var loginErrorMessage = error.message;
+              console.log(loginErrorCode);
+              console.log(loginErrorMessage);
+              if(loginErrorCode == "auth/wrong-password"){
+                $("#wachtwoordError").show();
+                $("#wachtwoordVergeten").show();
+              } else {
+                $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
+                  console.log("before colorbox");
+                  $.colorbox({
+                      iframe  : true,
+                      width	: "90%",
+                      height	: "90%",
+                      fixed	:true,
+                      href    : "/preview.html"
+                      });
+              }
+              // ...
+            });
+          } else {
+            $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
+                  console.log("before colorbox");
+                  $.colorbox({
+                      iframe  : true,
+                      width	: "90%",
+                      height	: "90%",
+                      fixed	:true,
+                      href    : "/preview.html"
+                      });
+          }
+        });
+
+        /*
         var newmessagesRef = messagesRef.push();
         newmessagesRef.set({
             name: data[0].value,
@@ -39,6 +135,8 @@ function saveToFirebase(name, email){
             fixed	:true,
             href    : "/preview.html"
             });
+
             console.log("after colorbox");
+        */
     });
 });

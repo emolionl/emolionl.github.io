@@ -86,6 +86,17 @@
                                 <li class="">
                                     <a href="#signup">Maak een afspraak</a>
                                 </li>
+                                <li class="dropdown" id="loginDropdown" style="display:none;">
+                                    <a class="dropdown-toggle"
+                                       data-toggle="dropdown"
+                                       href="#">
+                                        User
+                                        <b class="caret"></b>
+                                      </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a id="logout">Log uit</a></li>
+                                    </ul>
+                                  </li>
 
 
                             </ul>
@@ -124,7 +135,10 @@
                                     <li>Hoe kan ik je helpen om jezelf en andere te helpen?</li>
                                 </ul>
                             </p>
-                            <form class="form-horizontal bv-form" method="post" role="form" id="contactForm" novalidate="novalidate">
+                            <p id="downloadRapportButton" style="display: none;">
+                                <a href="https://s3-eu-west-1.amazonaws.com/images.emolio.nl/bioresonantie-apparaten-aanbod.pdf" class="btn btn-theme ladda-button btn-landing btn-large">Download Rapport als PDF!</a> 
+                            </p>
+                            <form class="form-horizontal bv-form" method="post" role="form" id="contactForm" novalidate="novalidate" style="display: none;">
 							<div class="form-group has-feedback">
 								<div class="col-sm-12">
 									<input style="margin-bottom: 15px;width: 100%;" type="text" name="name" id="name" class="form-control" placeholder="vul hier je naam in"><i class="form-control-feedback" data-bv-icon-for="name" style="display: none; top: 0px;"></i>	
@@ -139,6 +153,16 @@
 								    <!--
 								    <small data-bv-validator="notEmpty" data-bv-validator-for="contactEmail" class="help-block" style="display: none;">Dit is geen geldig emailadres</small>
 								    <small data-bv-validator="emailAddress" data-bv-validator-for="contactEmail" class="help-block" style="display: none;">Vul hier je emailadres in</small>-->
+                                </div>
+                                <div class="col-sm-12">
+									<input style="margin-bottom: 15px;width: 100%;" type="password" name="password" id="password" class="form-control" placeholder="geef hier je password"><i class="form-control-feedback" data-bv-icon-for="contactEmail" style="display: none; top: 0px;"></i>
+								    
+                                    <small id="wachtwoordError" class="help-block" style="display: none;">
+                                        <div class="alert alert-error">
+                                          Ongeldige wachtwoord
+                                        </div>
+                                    </small>
+								    <small id="wachtwoordVergeten" class="help-block" style="display: none;"><a>wachtwoord vergeten</a></small>
 								</div>
 							</div>
 							<div class="form-group">
@@ -150,6 +174,9 @@
 							</div>
                         <input type="hidden" value="">
                         </form>
+                        <div id="sign-in-status"></div>
+                        <div id="sign-in"></div>
+                        <div id="account-details"></div>
                             <!--<h1>Bioresonantie Nijmegen, Groesbeek, Kranenburg</h1>
                             
                             <p>
@@ -1339,7 +1366,19 @@
         <!--################ JAVASCRIPTS ################-->
 
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <!-- firebase -->
+        <!--<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>-->
+        <!-- Firebase App is always required and must be first -->
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"></script>
+
+        <!-- Add additional services that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase-functions.js"></script>
+        <!-- firebase -->
+
         <script src="js/jquery.js"></script>
         <script src="js/bootstrap.js"></script>
         <script src="js/jquery.fitvids.js"></script>
