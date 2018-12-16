@@ -30,7 +30,7 @@ function saveToFirebase(name, email){
             email: data[1].value
         });
 
-        $("#frame").attr("src", "http://emolio.nl/thankyoufordownload.html");
+        $("#frame").attr("src", "https://emolio.nl/thankyoufordownload.html");
         console.log("before colorbox");
         $.colorbox({
             iframe  : true,
