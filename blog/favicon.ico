@@ -83,15 +83,15 @@
 
 
 	<aside id="secondary" class="sidebar widget-area" role="complementary">
-		<section id="custom_html-3" class="widget_text widget widget_custom_html"><h2 class="widget-title">Gratis</h2><div class="textwidget custom-html-widget"><iframe src="/ad/v1.html" width="250" height="250">
+		<section id="custom_html-3" class="widget_text widget widget_custom_html"><h2 class="widget-title">Gratis</h2><div class="textwidget custom-html-widget"><iframe src="https://emolio.nl/ad/v1/250x250.html" width="250" height="250">
 	
 </iframe></div></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
 											<li>
-					<a href="http://www.emolio.nl/blog/hello-world/">Hello world!</a>
+					<a href="http://www.emolio.nl/blog/gebruik-van-niet-lineaire-analysesystemen/">Gebruik van niet-lineaire analysesystemen</a>
 									</li>
 					</ul>
 		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
-	<li class="cat-item cat-item-1"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/uncategorized/" >Uncategorized</a>
+	<li class="cat-item cat-item-2"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie/" >bioresonantie</a>
 </li>
 		</ul>
 </section>	</aside><!-- .sidebar .widget-area -->
