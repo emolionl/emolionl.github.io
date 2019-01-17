@@ -87,11 +87,16 @@
 	
 </iframe></div></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
 											<li>
+					<a href="https://emolio.nl/blog/prijs-bioresonantie-apparaat/">prijs bioresonantie apparaat</a>
+									</li>
+											<li>
 					<a href="https://emolio.nl/blog/gebruik-van-niet-lineaire-analysesystemen/">Gebruik van niet-lineaire analysesystemen</a>
 									</li>
 					</ul>
 		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
 	<li class="cat-item cat-item-2"><a href="https://emolio.nl/blog/bioresonantie-nieuws/bioresonantie/" >bioresonantie</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://emolio.nl/blog/bioresonantie-nieuws/uncategorized/" >Uncategorized</a>
 </li>
 		</ul>
 </section>	</aside><!-- .sidebar .widget-area -->
