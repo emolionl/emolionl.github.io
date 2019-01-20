@@ -1,58 +1,96 @@
 <!DOCTYPE html>
-<html lang="en-US" class="no-js">
+<html lang="en-US">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-		<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="http://www.emolio.nl/blog/xmlrpc.php">
 <title>Page not found &#8211; Bioresonantie nieuws</title>
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
 <link rel='dns-prefetch' href='//s.w.org' />
 <link rel="alternate" type="application/rss+xml" title="Bioresonantie nieuws &raquo; Feed" href="http://www.emolio.nl/blog/feed/" />
 <link rel="alternate" type="application/rss+xml" title="Bioresonantie nieuws &raquo; Comments Feed" href="http://www.emolio.nl/blog/comments/feed/" />
 <link rel='stylesheet' id='wp-block-library-css'  href='http://www.emolio.nl/blog/wp-includes/css/dist/block-library/style.min.css?ver=5.0.3' type='text/css' media='all' />
-<link rel='stylesheet' id='wp-block-library-theme-css'  href='http://www.emolio.nl/blog/wp-includes/css/dist/block-library/theme.min.css?ver=5.0.3' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-fonts-css'  href='https://fonts.googleapis.com/css?family=Merriweather%3A400%2C700%2C900%2C400italic%2C700italic%2C900italic%7CMontserrat%3A400%2C700%7CInconsolata%3A400&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-<link rel='stylesheet' id='genericons-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/genericons/genericons.css?ver=3.4.1' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-style-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/style.css?ver=5.0.3' type='text/css' media='all' />
-<link rel='stylesheet' id='twentysixteen-block-style-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/css/blocks.css?ver=20181230' type='text/css' media='all' />
-<!--[if lt IE 10]>
-<link rel='stylesheet' id='twentysixteen-ie-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/css/ie.css?ver=20160816' type='text/css' media='all' />
-<![endif]-->
-<!--[if lt IE 9]>
-<link rel='stylesheet' id='twentysixteen-ie8-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/css/ie8.css?ver=20160816' type='text/css' media='all' />
-<![endif]-->
-<!--[if lt IE 8]>
-<link rel='stylesheet' id='twentysixteen-ie7-css'  href='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/css/ie7.css?ver=20160816' type='text/css' media='all' />
-<![endif]-->
-<!--[if lt IE 9]>
-<script type='text/javascript' src='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/js/html5.js?ver=3.7.3'></script>
-<![endif]-->
-<script type='text/javascript' src='http://www.emolio.nl/blog/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
-<script type='text/javascript' src='http://www.emolio.nl/blog/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<link rel='stylesheet' id='patus-dosis-css'  href='//fonts.googleapis.com/css?family=Dosis%3A300' type='text/css' media='all' />
+<link rel='stylesheet' id='patus-style-css'  href='http://www.emolio.nl/blog/wp-content/themes/patus/style.css?ver=5.0.3' type='text/css' media='all' />
+<style id='patus-style-inline-css' type='text/css'>
+
+                a {color: #41b7d8;
+                    }
+                input[type="reset"],
+                input[type="submit"],
+                input[type="submit"] {
+                    background: #41b7d8;
+                }
+                #site-navigation.main-navigation .menu-toggle span,
+                #site-navigation .menu ul li a:hover,
+                #site-navigation .menu ul li a:focus,
+                #site-navigation .menu ul ul li a:hover,
+                #site-navigation .menu ul ul li a:focus,
+                #site-navigation .nav-menu ul li a:hover,
+                #site-navigation .nav-menu ul li a:focus,
+                #site-navigation .nav-menu ul ul li a:hover,
+                #site-navigation .nav-menu ul ul li a:focus,
+                #site-navigation .menu li a:hover,
+                #site-navigation .nav-menu li a:hover,
+                #site-navigation .menu li.current-menu-item a,
+                #site-navigation .menu li.current_page_item a,
+                #site-navigation .nav-menu li.current-menu-item a,
+                #site-navigation .nav-menu li.current_page_item a,
+                .more-link,.more-link:hover,
+                .loop-pagination a:hover,
+                .loop-pagination span:hover,
+                .loop-pagination a.current,
+                .loop-pagination span.current,
+                .entry-footer .post-categories li a:hover,
+                .entry-footer .post-tags li a:hover,
+                .post-navigation a:hover,
+                .post-categories li a:hover,
+                .post-tags li a:hover,
+                #comments .comment .comment-wrapper .comment-meta .comment-time:hover,
+                #comments .comment .comment-wrapper .comment-meta .comment-reply-link:hover,
+                #comments .comment .comment-wrapper .comment-meta .comment-edit-link:hover,
+                .widget a:hover,
+                .widget #calendar_wrap a {
+                    color: #f55d2d;
+                }
+                input[type="reset"]:hover,
+                input[type="submit"]:hover,
+                input[type="submit"]:hover,
+                .entry-meta {
+                	background: #f55d2d;
+                }
+</style>
 <link rel='https://api.w.org/' href='http://www.emolio.nl/blog/wp-json/' />
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.emolio.nl/blog/xmlrpc.php?rsd" />
 <meta name="generator" content="WordPress 5.0.3" />
 </head>
 
-<body class="error404 wp-embed-responsive hfeed">
-<div id="page" class="site">
-	<div class="site-inner">
-		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+<body class="error404 wp-custom-logo has-sidebar">
+<div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
-		<header id="masthead" class="site-header" role="banner">
-			<div class="site-header-main">
-				<div class="site-branding">
-					
-											<p class="site-title"><a href="http://www.emolio.nl/blog/" rel="home">Bioresonantie nieuws</a></p>
-											<p class="site-description">Bioresonantie nieuws</p>
-									</div><!-- .site-branding -->
+	<header id="masthead" class="site-header" role="banner">
+		<div class="container">
+			<div class="site-branding">
+				<a href="http://www.emolio.nl/blog/" class="custom-logo-link" rel="home" itemprop="url"><img width="215" height="33" src="http://www.emolio.nl/blog/wp-content/uploads/2019/01/cropped-logo.png" class="custom-logo" alt="Bioresonantie nieuws" itemprop="logo" /></a>                				<p class="site-title"><a href="http://www.emolio.nl/blog/" rel="home">Bioresonantie nieuws</a></p>
+                                <h2 class="site-description">Bioresonantie nieuws</h2>
+			</div>
+		</div>
 
-							</div><!-- .site-header-main -->
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="container">
+				<button class="menu-toggle"><span class="genericon genericon-menu"></span></button>
+				<div class="menu"><ul>
+<li ><a href="http://www.emolio.nl/blog/">Home</a></li><li class="page_item page-item-2"><a href="http://www.emolio.nl/blog/sample-page/">Sample Page</a></li>
+</ul></div>
+				<ul class="nav-social">
+																													</ul>
+			</div>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
 
-					</header><!-- .site-header -->
-
-		<div id="content" class="site-content">
+	<div id="content" class="site-content">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -63,29 +101,19 @@
 				</header><!-- .page-header -->
 
 				<div class="page-content">
-					<p>It looks like nothing was found at this location. Maybe try a search?</p>
+					<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>
 
-					
-<form role="search" method="get" class="search-form" action="http://www.emolio.nl/blog/">
-	<label>
-		<span class="screen-reader-text">Search for:</span>
-		<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
-	</label>
-	<button type="submit" class="search-submit"><span class="screen-reader-text">Search</span></button>
-</form>
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- .site-main -->
-
-		
-	</div><!-- .content-area -->
-
-
-	<aside id="secondary" class="sidebar widget-area" role="complementary">
-		<section id="custom_html-3" class="widget_text widget widget_custom_html"><h2 class="widget-title">Gratis</h2><div class="textwidget custom-html-widget"><iframe src="https://emolio.nl/ad/v1/250x250.html" width="250" height="250">
-	
-</iframe></div></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+					<form role="search" method="get" class="search-form" action="http://www.emolio.nl/blog/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+				</label>
+				<input type="submit" class="search-submit" value="Search" />
+			</form>
+							<div class="widget widget_recent_entries">		<h2 class="widgettitle">Recent Posts</h2>		<ul>
+											<li>
+					<a href="http://www.emolio.nl/blog/gebruikaanwijzing-cursus-bioresonantie-apparaat/">Gebruikaanwijzing, cursus bioresonantie apparaat</a>
+									</li>
 											<li>
 					<a href="http://www.emolio.nl/blog/bioresonantie-is-trilling-alles-is-trilling/">Bioresonantie is trilling, alles is trilling</a>
 									</li>
@@ -96,33 +124,80 @@
 					<a href="http://www.emolio.nl/blog/gebruik-van-niet-lineaire-analysesystemen/">Gebruik van niet-lineaire analysesystemen</a>
 									</li>
 					</ul>
-		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+		</div>
+										<div class="widget widget_categories">
+						<h2 class="widget-title">Most Used Categories</h2>
+						<ul>
+							<li class="cat-item cat-item-1"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-aparaten/" title="bioresonantie apparaat">bioresonantie apparaat</a> (2)
+</li>
+	<li class="cat-item cat-item-2"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie/" >bioresonantie</a> (2)
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-cursus/" >bioresonantie cursus</a> (1)
+</li>
+						</ul>
+					</div><!-- .widget -->
+					
+					<div class="widget widget_archive"><h2 class="widgettitle">Archives</h2><p>Try looking in the monthly archives. 🙂</p>		<label class="screen-reader-text" for="archives-dropdown--1">Archives</label>
+		<select id="archives-dropdown--1" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			
+			<option value="">Select Month</option>
+				<option value='http://www.emolio.nl/blog/2019/01/'> January 2019 </option>
+
+		</select>
+		</div>
+					<div class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioplasm-cursus/" class="tag-cloud-link tag-link-9 tag-link-position-1" style="font-size: 8pt;" aria-label="bioplasm cursus (1 item)">bioplasm cursus</a>
+<a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-apparaat-prijs/" class="tag-cloud-link tag-link-3 tag-link-position-2" style="font-size: 8pt;" aria-label="bioresonantie apparaat prijs (1 item)">bioresonantie apparaat prijs</a>
+<a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-cursus/" class="tag-cloud-link tag-link-7 tag-link-position-3" style="font-size: 8pt;" aria-label="bioresonantie cursus (1 item)">bioresonantie cursus</a>
+<a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-trilling/" class="tag-cloud-link tag-link-4 tag-link-position-4" style="font-size: 8pt;" aria-label="bioresonantie trilling (1 item)">bioresonantie trilling</a>
+<a href="http://www.emolio.nl/blog/bioresonantie-nieuws/gebruikaanwijzing-bioresonantie-apparaat/" class="tag-cloud-link tag-link-6 tag-link-position-5" style="font-size: 8pt;" aria-label="gebruikaanwijzing bioresonantie apparaat (1 item)">gebruikaanwijzing bioresonantie apparaat</a>
+<a href="http://www.emolio.nl/blog/bioresonantie-nieuws/hunter-cursus/" class="tag-cloud-link tag-link-8 tag-link-position-6" style="font-size: 8pt;" aria-label="hunter cursus (1 item)">hunter cursus</a></div>
+</div>
+				</div><!-- .page-content -->
+			</section><!-- .error-404 -->
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+
+<div id="secondary" class="widget-area" role="complementary">
+	<aside id="custom_html-3" class="widget_text widget widget_custom_html"><h3 class="widget-title">Gratis</h3><div class="textwidget custom-html-widget"><iframe src="https://emolio.nl/ad/v1/250x250.html" width="250" height="250">
+	
+</iframe></div></aside>		<aside id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title">Recent Posts</h3>		<ul>
+											<li>
+					<a href="http://www.emolio.nl/blog/gebruikaanwijzing-cursus-bioresonantie-apparaat/">Gebruikaanwijzing, cursus bioresonantie apparaat</a>
+									</li>
+											<li>
+					<a href="http://www.emolio.nl/blog/bioresonantie-is-trilling-alles-is-trilling/">Bioresonantie is trilling, alles is trilling</a>
+									</li>
+											<li>
+					<a href="http://www.emolio.nl/blog/prijs-bioresonantie-apparaat/">prijs bioresonantie apparaat</a>
+									</li>
+											<li>
+					<a href="http://www.emolio.nl/blog/gebruik-van-niet-lineaire-analysesystemen/">Gebruik van niet-lineaire analysesystemen</a>
+									</li>
+					</ul>
+		</aside><aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
 	<li class="cat-item cat-item-2"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie/" >bioresonantie</a>
 </li>
-	<li class="cat-item cat-item-1"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/uncategorized/" >Uncategorized</a>
+	<li class="cat-item cat-item-1"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-aparaten/" title="bioresonantie apparaat">bioresonantie apparaat</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.emolio.nl/blog/bioresonantie-nieuws/bioresonantie-cursus/" >bioresonantie cursus</a>
 </li>
 		</ul>
-</section>	</aside><!-- .sidebar .widget-area -->
+</aside></div><!-- #secondary -->
 
-		</div><!-- .site-content -->
+	</div><!-- #content -->
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
-			
-			
+	<footer id="colophon" class="site-footer clearfix" role="contentinfo">
+		<div class="container">
 			<div class="site-info">
-								<span class="site-title"><a href="http://www.emolio.nl/blog/" rel="home">Bioresonantie nieuws</a></span>
-								
-			</div><!-- .site-info -->
-		</footer><!-- .site-footer -->
-	</div><!-- .site-inner -->
-</div><!-- .site -->
-
-<script type='text/javascript' src='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/js/skip-link-focus-fix.js?ver=20160816'></script>
-<script type='text/javascript'>
-/* <![CDATA[ */
-var screenReaderText = {"expand":"expand child menu","collapse":"collapse child menu"};
-/* ]]> */
-</script>
-<script type='text/javascript' src='http://www.emolio.nl/blog/wp-content/themes/twentysixteen/js/functions.js?ver=20181230'></script>
+				&copy; 2019 Bioresonantie nieuws				 - Theme: Patus by <a href="http://www.famethemes.com/" rel="designer">FameThemes</a>.			</div><!-- .site-info -->
+			<div class="footer-social">
+							</div>
+		</div>
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+<script type='text/javascript' src='http://www.emolio.nl/blog/wp-content/themes/patus/assets/js/navigation.js?ver=20120206'></script>
+<script type='text/javascript' src='http://www.emolio.nl/blog/wp-content/themes/patus/assets/js/skip-link-focus-fix.js?ver=20130115'></script>
 </body>
 </html>
