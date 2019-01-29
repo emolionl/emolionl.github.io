@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
-    $("#main-media").fitVids();
+    $(".main-media").fitVids();
 
  });
 
