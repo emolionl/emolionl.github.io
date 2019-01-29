@@ -1,44 +1,53 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<title>Object not found!</title>
-<link rev="made" href="mailto:webmaster@emolio.nl" />
-<style type="text/css"><!--/*--><![CDATA[/*><!--*/ 
-    body { color: #000000; background-color: #FFFFFF; }
-    a:link { color: #0000CC; }
-    p, address {margin-left: 3em;}
-    span {font-size: smaller;}
-/*]]>*/--></style>
-</head>
+/**
+ * Theme Customizer enhancements for a better user experience.
+ *
+ * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ */
 
-<body>
-<h1>Object not found!</h1>
-<p>
+( function( $ ) {
+	// Site title and description.
+	wp.customize( 'blogname', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-title a' ).text( to );
+		} );
+	} );
+	wp.customize( 'blogdescription', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-description' ).text( to );
+		} );
+	} );
+	// Header text color.
+	wp.customize( 'header_textcolor', function( value ) {
+		value.bind( function( to ) {
+			if ( 'blank' === to ) {
+				$( '.site-title, .site-description' ).css( {
+					'clip': 'rect(1px, 1px, 1px, 1px)',
+					'position': 'absolute'
+				} );
+			} else {
+				$( '.site-title a, .site-description' ).css( {
+					'clip': 'auto',
+					'color': to,
+					'position': 'relative'
+				} );
+			}
+		} );
+	} );
 
+	// Primary Color.
+	wp.customize( 'ft_primary_color', function( value ) {
+		value.bind( function( newval ) {
+			$('.site-footer a, .entry-content a, .page-links a, #comments a').css('color', newval );
+			$('input[type="reset"], input[type="submit"], input[type="submit"]').css('background', newval);
+		} );
+	} );
 
-    The requested URL was not found on this server.
+	// Secondary Color.
+	wp.customize( 'ft_secondary_color', function( value ) {
+		value.bind( function( newval ) {
+			$('#site-navigation.main-navigation.toggled .menu-toggle span,#site-navigation .menu ul li a:hover, #site-navigation .menu ul li a:focus, #site-navigation .menu ul ul li a:hover, #site-navigation .menu ul ul li a:focus, #site-navigation .nav-menu ul li a:hover, #site-navigation .nav-menu ul li a:focus, #site-navigation .nav-menu ul ul li a:hover, #site-navigation .nav-menu ul ul li a:focus,#site-navigation .menu li a:hover, #site-navigation .nav-menu li a:hover ,#site-navigation .menu li.current-menu-item a, #site-navigation .menu li.current_page_item a, #site-navigation .nav-menu li.current-menu-item a, #site-navigation .nav-menu li.current_page_item a,.more-link,.more-link:hover,.loop-pagination a:hover, .loop-pagination span:hover,.loop-pagination a.current, .loop-pagination span.current,.entry-footer .post-categories li a:hover, .entry-footer .post-tags li a:hover,.post-navigation a:hover,.post-categories li a:hover, .post-tags li a:hover,#comments .comment .comment-wrapper .comment-meta .comment-time:hover, #comments .comment .comment-wrapper .comment-meta .comment-reply-link:hover, #comments .comment .comment-wrapper .comment-meta .comment-edit-link:hover,.widget a:hover,.widget #calendar_wrap a').css('color', newval );
+			$('input[type="reset"]:hover, input[type="submit"]:hover, input[type="submit"]:hover,.entry-meta').css('background', newval);
+		} );
+	} );
 
-  
-
-    If you entered the URL manually please check your
-    spelling and try again.
-
-  
-
-</p>
-<p>
-If you think this is a server error, please contact
-the <a href="mailto:webmaster@emolio.nl">webmaster</a>.
-
-</p>
-
-<h2>Error 404</h2>
-<address>
-  <a href="/">www.emolio.nl</a><br />
-  <span>Apache/2.4.34 (Win32) OpenSSL/1.1.0i PHP/7.2.10</span>
-</address>
-</body>
-</html>
-
+} )( jQuery );

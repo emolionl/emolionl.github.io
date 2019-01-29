@@ -1,12 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-<title>Object not found!</title>
-<link rev="made" href="mailto:webmaster@emolio.nl" />
-<style type="text/css"><!-- 
-    body {color: #000;background-color: #fff;}
-a:link {color: #00c;}
-p, address {margin-left: 3em;}
-span {font-size: smaller;}
+body {direction: rtl;unicode-bidi: embed;}
+.nav-social {left: 20px;top: 5px;right: auto;}
+#site-navigation .menu li:first-child a, #site-navigation .nav-menu li:first-child a {padding-left: 2.30769rem;padding-left: 23px;padding-right: 0px;}
+#site-navigation .menu .sub-menu li a {text-align: right;padding-right: 1.5rem;padding-right: 15px;}
+.search-field {padding: 10px 2% 10px 15% !important;background: url("assets/images/search-icon.png") no-repeat scroll 10px center white;}
