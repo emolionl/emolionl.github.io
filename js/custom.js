@@ -49,7 +49,7 @@ $(".nav li a[href^='#']").click(function(event){
 
   
 // Cache selectors
-/*var lastId,
+var lastId,
 topMenu = $(".nav"),
 topMenuHeight = topMenu.outerHeight()+50,
 // All list items
@@ -61,7 +61,7 @@ scrollItems = menuItems.map(function(){
         return item;
     }
 });
-*/
+
 
 
 // Bind to scroll
