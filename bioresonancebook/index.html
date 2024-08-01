@@ -27,11 +27,19 @@
             width: 100%;
             height: auto;
         }
+        #loading-spinner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Secure PDF Viewer</h1>
+        <h1>Bioresonance Book Paul van Maaren</h1>
         <div id="auth-section">
             <div id="login-form" class="form-group">
                 <label for="email">Email:</label>
@@ -68,6 +76,9 @@
             </div>
             <div id="pdf-viewer" class="border"></div>
         </div>
+    </div>
+    <div id="loading-spinner" class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
     </div>
     <script>
         // Firebase configuration
@@ -277,10 +288,15 @@
         document.getElementById('go-to-page').addEventListener('click', onGoToPage);
 
         function loadPDF(url) {
+            document.getElementById('loading-spinner').style.display = 'block';
             pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
                 pdfDoc = pdfDoc_;
                 document.getElementById('page-count').textContent = pdfDoc.numPages;
                 renderPage(pageNum);
+                document.getElementById('loading-spinner').style.display = 'none';
+            }).catch(function(error) {
+                console.error("Error loading PDF:", error);
+                document.getElementById('loading-spinner').style.display = 'none';
             });
         }
     </script>
