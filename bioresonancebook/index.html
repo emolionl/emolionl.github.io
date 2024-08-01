@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure PDF Viewer</title>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin-allow-popups">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <style>
+        body {
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* IE10+/Edge */
+            user-select: none; /* Standard */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Secure PDF Viewer</h1>
+        <div id="auth-section">
+            <div id="login-form" class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                <button id="login-button" class="btn btn-primary mt-2">Login</button>
+                <button id="google-login-button" class="btn btn-secondary mt-2">Login with Google</button>
+                <p class="mt-2">Don't have an account? <a href="#" id="show-register">Register here</a></p>
+            </div>
+            <div id="register-form" class="form-group" style="display: none;">
+                <label for="register-email">Email:</label>
+                <input type="email" class="form-control" id="register-email" placeholder="Enter email">
+                <label for="register-password">Password:</label>
+                <input type="password" class="form-control" id="register-password" placeholder="Enter password">
+                <button id="register-button" class="btn btn-primary mt-2">Register</button>
+                <p class="mt-2">Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </div>
+            <button id="logout-button" class="btn btn-danger mt-2" style="display: none;">Logout</button>
+        </div>
+        <div id="content-section" style="display: none;">
+            <div class="form-group">
+                <label for="languageSelect">Select Language:</label>
+                <select class="form-control" id="languageSelect">
+                    <!-- Options will be populated dynamically -->
+                </select>
+            </div>
+            <div id="pdf-viewer"></div>
+        </div>
+    </div>
+    <script>
+        // Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBZhN7pmuluVBmCQiOWxytlGh0S2_FsN6U",
+            authDomain: "emolio-nl.firebaseapp.com",
+            projectId: "emolio-nl",
+            storageBucket: "emolio-nl.appspot.com",
+            messagingSenderId: "619699037685",
+            appId: "1:619699037685:web:92cf63d022a2eee39a6cbc"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+
+        // Function to disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Firebase Authentication
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                document.getElementById('auth-section').style.display = 'none';
+                document.getElementById('content-section').style.display = 'block';
+                document.getElementById('logout-button').style.display = 'block';
+                loadUserData(user);
+            } else {
+                document.getElementById('auth-section').style.display = 'block';
+                document.getElementById('content-section').style.display = 'none';
+                document.getElementById('logout-button').style.display = 'none';
+            }
+        });
+
+        // Toggle between login and register forms
+        document.getElementById('show-register').addEventListener('click', function() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        });
+
+        document.getElementById('show-login').addEventListener('click', function() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+
+        // Register with email and password
+        document.getElementById('register-button').addEventListener('click', function() {
+            var email = document.getElementById('register-email').value;
+            var password = document.getElementById('register-password').value;
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                console.error("Error registering with email and password:", error);
+                alert(error.message);
+            });
+        });
+
+        // Login with email and password
+        document.getElementById('login-button').addEventListener('click', function() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                console.error("Error signing in with email and password:", error);
+                alert(error.message);
+            });
+        });
+
+        // Login with Google
+        document.getElementById('google-login-button').addEventListener('click', function() {
+            var provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(provider).catch(function(error) {
+                console.error("Error signing in with Google:", error);
+                alert(error.message);
+            });
+        });
+
+        // Logout
+        document.getElementById('logout-button').addEventListener('click', function() {
+            firebase.auth().signOut().then(function() {
+                console.log("User signed out.");
+                // Optionally, you can redirect the user to the login page or refresh the page
+                location.reload();
+            }).catch(function(error) {
+                console.error("Error signing out:", error);
+                alert(error.message);
+            });
+        });
+
+        // Load user data
+        function loadUserData(user) {
+            var userId = user.uid;
+            var docRef = db.collection("bioresonancebook").where("user_id", "==", userId);
+
+            docRef.get().then(function(querySnapshot) {
+                if (!querySnapshot.empty) {
+                    var doc = querySnapshot.docs[0];
+                    if (doc.data().authorized) {
+                        // User is authorized
+                        var userLanguages = doc.data().language;
+                        console.log("User languages:", userLanguages);
+                        
+                        // Populate the dropdown with available languages
+                        var languageSelect = document.getElementById('languageSelect');
+                        languageSelect.innerHTML = ''; // Clear previous options
+                        userLanguages.forEach(function(language) {
+                            var option = document.createElement('option');
+                            option.value = language;
+                            option.text = language.toUpperCase();
+                            languageSelect.appendChild(option);
+                        });
+
+                        // Load PDF when a language is selected
+                        languageSelect.addEventListener('change', function() {
+                            var selectedLanguage = languageSelect.value;
+                            var storage = firebase.storage();
+                            var pathReference = storage.ref('bioresonancebook/' + selectedLanguage + '.pdf');
+
+                            pathReference.getDownloadURL().then(function(url) {
+                                loadPDF(url);
+                            }).catch(function(error) {
+                                console.error("Error getting PDF URL:", error);
+                            });
+                        });
+
+                        // Trigger change event to load the default language PDF
+                        languageSelect.dispatchEvent(new Event('change'));
+                    } else {
+                        alert("You are not authorized to view this document.");
+                    }
+                } else {
+                    alert("User document not found.");
+                }
+            }).catch(function(error) {
+                console.error("Error getting document:", error);
+            });
+        }
+
+        // Function to load PDF
+        function loadPDF(url) {
+            var loadingTask = pdfjsLib.getDocument(url);
+            loadingTask.promise.then(function(pdf) {
+                pdf.getPage(1).then(function(page) {
+                    var scale = 1.5;
+                    var viewport = page.getViewport({ scale: scale });
+
+                    var canvas = document.createElement('canvas');
+                    var context = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    var renderContext = {
+                        canvasContext: context,
+                        viewport: viewport
+                    };
+                    page.render(renderContext).promise.then(function() {
+                        var pdfViewer = document.getElementById('pdf-viewer');
+                        pdfViewer.innerHTML = ''; // Clear previous PDF
+                        pdfViewer.appendChild(canvas);
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+</html>
