@@ -32,12 +32,26 @@
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
             z-index: 1000;
+        }
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .navbar-brand img {
+            height: 40px;
         }
     </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="https://emolio.nl">
+            <img src="https://emolio.nl/images/logo.png" alt="Emolio Logo">
+        </a>
+        <div class="ml-auto">
+            <button id="logout-button" class="btn btn-danger" style="display: none;">Logout</button>
+        </div>
+    </nav>
     <div class="container mt-5">
         <h1>Bioresonance Book Paul van Maaren</h1>
         <div id="auth-section">
@@ -58,7 +72,6 @@
                 <button id="register-button" class="btn btn-primary mt-2">Register</button>
                 <p class="mt-2">Already have an account? <a href="#" id="show-login">Login here</a></p>
             </div>
-            <button id="logout-button" class="btn btn-danger mt-2" style="display: none;">Logout</button>
         </div>
         <div id="content-section" style="display: none;">
             <div class="form-group">
